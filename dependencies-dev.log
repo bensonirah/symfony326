@@ -1,0 +1,5 @@
+dama/doctrine-test-bundle
+doctrine/data-fixtures
+doctrine/doctrine-fixtures-bundle
+sensio/generator-bundle
+symfony/phpunit-bridge

@@ -1,0 +1,16 @@
+csa/guzzle-bundle
+ext-json
+fr3d/ldap-bundle
+friendsofsymfony/rest-bundle
+friendsofsymfony/user-bundle
+gesdinet/jwt-refresh-token-bundle
+incenteev/composer-parameter-handler
+ircmaxell/password-compat
+jms/serializer-bundle
+lexik/jwt-authentication-bundle
+nekman/luhn-algorithm
+onurb/excel-bundle
+ramsey/uuid
+sensio/distribution-bundle
+sensio/framework-extra-bundle
+whiteoctober/tcpdf-bundle
