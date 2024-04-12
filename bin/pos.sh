@@ -12,5 +12,15 @@ function help() {
 if [ $# -lt 1 ]; then
     help
 else
-    echo "Run pos-cli command: $@"
+    # Import all command from pos workspace
+    for _cmd in $(find $POS_COMMAND -type f -iname "*.sh"); do
+        . $_cmd
+    done
+
+    # Extract the base command
+    _command=$1
+    shift 1
+
+   # Run command
+   "$_command" $@
 fi

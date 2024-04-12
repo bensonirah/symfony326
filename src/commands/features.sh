@@ -1,5 +1,6 @@
 #!/bin/bash
 
 function features() {
-    echo "Run features command"
+    local args=$1
+    command git branch | gum choose
 }
