@@ -2,25 +2,22 @@
 
 set -fe
 
-function help() {
-    figlet "pos-cli"
-    echo ""
-    echo "Usage:  pos [OPTIONS] COMMAND"
-    echo ""
-}
+# Import all command from pos workspace
+for _cmd in $(find $POS_COMMAND -type f -iname "*.sh"); do
+    . $_cmd
+done
 
 if [ $# -lt 1 ]; then
-    help
+    help $@
 else
-    # Import all command from pos workspace
-    for _cmd in $(find $POS_COMMAND -type f -iname "*.sh"); do
-        . $_cmd
-    done
-
     # Extract the base command
     _command=$1
     shift 1
 
-   # Run command
-   "$_command" $@
+    # Run command
+    if type "$_command" &>/dev/null; then
+        "$_command" $@
+    else
+        help $@
+    fi
 fi
